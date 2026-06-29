@@ -136,6 +136,7 @@ func busyHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	fmt.Println("SERVER ĐANG KHỞI ĐỘNG...")
 	initDB()
 	defer db.Close()
 
