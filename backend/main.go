@@ -30,7 +30,12 @@ var db *sql.DB
 
 func initDB() {
 	var err error
-
+	err = db.Ping()
+    if err != nil {
+        // Thay vì log.Fatal, hãy dùng log.Printf để server vẫn khởi động được
+        log.Printf("CẢNH BÁO: Không kết nối được Database: %v", err)
+        return 
+    }
 	// Railway tự động cấp biến DATABASE_URL khi bạn liên kết dịch vụ Postgres
 	connStr := os.Getenv("DATABASE_URL")
 	if connStr == "" {
