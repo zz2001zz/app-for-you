@@ -4,7 +4,6 @@
         "builder": "NIXPACKS"
     },
     "deploy": {
-        "startCommand": "./main",
         "restartPolicyType": "ON_FAILURE"
-    }
+	}
 }
