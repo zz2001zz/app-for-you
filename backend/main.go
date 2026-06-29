@@ -142,8 +142,8 @@ func busyHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	fmt.Println("SERVER ĐANG KHỞI ĐỘNG...")
-	// initDB()
-	// defer db.Close()
+	initDB()
+	defer db.Close()
 
 	// Các API endpoints chính
 	http.HandleFunc("/api/invite", inviteHandler)
